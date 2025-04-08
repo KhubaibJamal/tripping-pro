@@ -159,21 +159,31 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
               color: CustomColors.textFieldHintColor,
               fontSize: context.font.large,
               fontWeight: FontWeight.w400,
-              letterSpacing: 0.7,
+              height: 1.0,
+              letterSpacing: 0.0,
             ),
         filled: true,
         fillColor: widget.fillColor ?? CustomColors.textFieldFillColor,
         border: UnderlineInputBorder(
-          borderSide: BorderSide(color: CustomColors.textFieldBorder, width: 2.0),
+          borderSide: BorderSide(
+            color: CustomColors.textFieldBorder,
+            width: 2.0,
+          ),
         ),
         focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: CustomColors.textFieldBorder, width: 2.0),
+          borderSide: BorderSide(
+            color: CustomColors.textFieldBorder,
+            width: 2.0,
+          ),
         ),
         errorBorder: const UnderlineInputBorder(
           borderSide: BorderSide(color: Colors.red, width: 2.0),
         ),
         enabledBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: CustomColors.textFieldBorder, width: 2.0),
+          borderSide: BorderSide(
+            color: CustomColors.textFieldBorder,
+            width: 2.0,
+          ),
         ),
       ),
     );

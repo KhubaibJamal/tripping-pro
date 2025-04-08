@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tripping_pro/res/routes/routes.dart';
 import 'package:tripping_pro/res/theme/theme.dart';
 import 'package:tripping_pro/screens/widgets/custom_button.dart';
 import 'package:tripping_pro/screens/widgets/custom_safearea.dart';
@@ -55,14 +56,18 @@ class GetStartedScreen extends StatelessWidget {
                 // buttons
                 SizedBox(height: 20.rh(context)),
                 CustomButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, RouteNames.registerScreen);
+                  },
                   buttonTitle: "Create My Account",
                 ),
                 SizedBox(height: 20.rh(context)),
                 CustomButton(
                   textColor: CustomColors.primary,
                   buttonColor: CustomColors.white,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, RouteNames.loginScreen);
+                  },
                   buttonTitle: "Sign in",
                 ),
               ],
