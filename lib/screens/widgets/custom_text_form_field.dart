@@ -1,11 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tripping_pro/res/constants/media_constants.dart';
 import 'package:tripping_pro/res/theme/theme.dart';
 import 'package:tripping_pro/utils/responsiveSize.dart';
 import 'package:flutter_svg/svg.dart';
-
 
 class CustomTextFormField extends StatefulWidget {
   const CustomTextFormField({
@@ -100,7 +98,8 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       textInputAction: widget.action,
       keyboardAppearance: Brightness.light,
       readOnly: widget.isReadOnly ?? false,
-      style: widget.textStyle ??
+      style:
+          widget.textStyle ??
           TextStyle(
             fontSize: context.font.normal,
             color: Colors.black,
@@ -114,17 +113,19 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       decoration: InputDecoration(
         contentPadding: widget.contentPadding,
         prefix: widget.prefix,
-        prefixIcon: widget.prefixIcon != null
-            ? Padding(
-                padding: const EdgeInsets.all(14),
-                child: SvgPicture.asset(
-                  widget.prefixIcon!,
-                  colorFilter: ColorFilter.mode(
+        prefixIcon:
+            widget.prefixIcon != null
+                ? Padding(
+                  padding: const EdgeInsets.all(14),
+                  child: SvgPicture.asset(
+                    widget.prefixIcon!,
+                    colorFilter: ColorFilter.mode(
                       widget.searchSvgColor ?? CustomColors.secondaryTextColor,
-                      BlendMode.srcIn),
-                ),
-              )
-            : widget.prefixContainer,
+                      BlendMode.srcIn,
+                    ),
+                  ),
+                )
+                : widget.prefixContainer,
         isDense: widget.dense,
         suffixIcon: Row(
           mainAxisSize: MainAxisSize.min,
@@ -140,61 +141,50 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
               ),
             if (widget.isCloseField)
               IconButton(
-                  onPressed: () {
-                    widget.controller?.clear();
-                    if (widget.onChange != null) {
-                      widget.onChange!('');
-                    }
-                  },
-                  icon: SvgPicture.asset(MediaConstants.closeIcon)),
-            if (widget.suffix != null) widget.suffix!
+                onPressed: () {
+                  widget.controller?.clear();
+                  if (widget.onChange != null) {
+                    widget.onChange!('');
+                  }
+                },
+                icon: SvgPicture.asset(MediaConstants.closeIcon),
+              ),
+            if (widget.suffix != null) widget.suffix!,
           ],
         ),
         hintText: widget.hintText,
-        hintStyle: widget.hintStyle ??
+        hintStyle:
+            widget.hintStyle ??
             Theme.of(context).textTheme.displayMedium!.copyWith(
-                  color: CustomColors.textFieldHintColor,
-                  fontSize: context.font.large,
-                  fontWeight: FontWeight.w400,
-                  letterSpacing: 0.7,
-                ),
+              color: CustomColors.textFieldHintColor,
+              fontSize: context.font.large,
+              fontWeight: FontWeight.w400,
+              letterSpacing: 0.7,
+            ),
         filled: true,
         fillColor: widget.fillColor ?? CustomColors.textFieldFillColor,
-        focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide.none, borderRadius: getBorderRadius()),
-        enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide.none, borderRadius: getBorderRadius()),
-        border: OutlineInputBorder(
-            borderSide: BorderSide.none, borderRadius: getBorderRadius()),
+        border: UnderlineInputBorder(
+          borderSide: BorderSide(color: CustomColors.textFieldBorder, width: 2.0),
+        ),
+        focusedBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: CustomColors.textFieldBorder, width: 2.0),
+        ),
+        errorBorder: const UnderlineInputBorder(
+          borderSide: BorderSide(color: Colors.red, width: 2.0),
+        ),
+        enabledBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: CustomColors.textFieldBorder, width: 2.0),
+        ),
       ),
     );
   }
 
   Icon passwordIcon(bool obscure) {
     return obscure
-        ? const Icon(
-            Icons.visibility,
-            color: CustomColors.textFieldHintColor,
-          )
+        ? const Icon(Icons.visibility, color: CustomColors.textFieldHintColor)
         : const Icon(
-            Icons.visibility_off,
-            color: CustomColors.textFieldHintColor,
-          );
-  }
-
-  BorderRadius getBorderRadius() {
-    return widget.isLeftBorder == null && widget.isRightBorder == null
-        ? BorderRadius.circular(12)
-        : widget.isLeftBorder == true
-            ? const BorderRadius.only(
-                topLeft: Radius.circular(12),
-                bottomLeft: Radius.circular(12),
-              )
-            : widget.isRightBorder == true
-                ? const BorderRadius.only(
-                    topRight: Radius.circular(12),
-                    bottomRight: Radius.circular(12),
-                  )
-                : BorderRadius.zero;
+          Icons.visibility_off,
+          color: CustomColors.textFieldHintColor,
+        );
   }
 }

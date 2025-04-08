@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:tripping_pro/res/constants/constants.dart';
 import 'package:tripping_pro/res/theme/theme.dart';
 import 'package:tripping_pro/utils/responsiveSize.dart';
@@ -24,9 +23,7 @@ class CustomButton extends StatelessWidget {
   final bool? showElevation;
   final Color? textColor;
   final Color? buttonColor;
-  final bool? withIcon;
-  final String? frontSvgIcon;
-  final Color? iconColor;
+
   final EdgeInsets? outerPadding;
   final Color? disabledColor;
   final VoidCallback? onTapDisabledButton;
@@ -52,9 +49,6 @@ class CustomButton extends StatelessWidget {
     this.showElevation,
     this.textColor,
     this.buttonColor,
-    this.withIcon = false,
-    this.frontSvgIcon,
-    this.iconColor,
     this.outerPadding,
     this.disabledColor,
     this.onTapDisabledButton,
@@ -135,19 +129,6 @@ class CustomButton extends StatelessWidget {
                           fontFamily: Constants.fontFamily,
                         ),
                   ),
-              ],
-
-              if (withIcon == true) ...[
-                SizedBox(width: 10.rw(context)),
-                SvgPicture.asset(
-                  frontSvgIcon!,
-                  colorFilter: ColorFilter.mode(
-                    iconColor ?? CustomColors.primary,
-                    BlendMode.srcIn,
-                  ),
-                  height: 14,
-                  width: 14,
-                ),
               ],
             ],
           ),

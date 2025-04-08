@@ -332,11 +332,13 @@ ThemeData lightTheme = ThemeData(
 class CustomColors {
   static const Color primary = Color(0xFF4C24B1);
   static const Color primaryTextColor = Color(0xFF000000);
+  static const Color primaryTextSubtitleColor = Color(0xFF4D4D4D);
   static const Color secondaryTextColor = Color(0xFF9B96AB);
   static const Color bodyTextColor = Color(0xFF595959);
   static const Color bodyGrey = Color(0xFFEFF0F1);
-  static const Color textFieldHintColor = Color(0xFF99A2AB);
-  static const Color textFieldFillColor = Color(0xFFF4F5F6);
+  static const Color textFieldHintColor = Color(0xFF9B96AB);
+  static const Color textFieldBorder = Color(0xFFD2C2FF);
+  static const Color textFieldFillColor = Color(0xFFFFFFFF);
   static const Color primaryScreenColor = Color(0xFFFFFFFF);
   static const Color red = Color(0xFFEA4335);
   static const Color green = Color(0xFF2CBD53);
