@@ -64,7 +64,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: context.screenHeight * 0.1),
+                SizedBox(height: context.screenHeight * 0.08),
                 Text(
                   "Register",
                   style: TextStyle(
@@ -131,7 +131,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ],
                 ),
                 SizedBox(height: 20.rh(context)),
-                Divider(color: CustomColors.grey),
+                Divider(
+                  color: CustomColors.dividerColor,
+                  endIndent: 20,
+                  indent: 20,
+                ),
                 SizedBox(height: 20.rh(context)),
                 Align(
                   alignment: Alignment.center,

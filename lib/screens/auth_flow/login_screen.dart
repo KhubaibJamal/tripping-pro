@@ -62,13 +62,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(height: 30.rh(context)),
 
                 CustomTextFormField(
-                  hintText: "username",
+                  hintText: "Username",
                   controller: _usernameController,
                 ),
                 SizedBox(height: 30.rh(context)),
 
                 CustomTextFormField(
-                  hintText: "password",
+                  hintText: "Password",
                   controller: _passwordController,
                   isPasswordField: true,
                 ),
@@ -111,7 +111,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
 
                 SizedBox(height: 30.rh(context)),
-                Divider(color: CustomColors.grey),
+                Divider(
+                  color: CustomColors.dividerColor,
+                  endIndent: 20,
+                  indent: 20,
+                ),
                 SizedBox(height: 20.rh(context)),
 
                 Align(

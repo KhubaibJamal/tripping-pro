@@ -173,19 +173,22 @@ ThemeData lightTheme = ThemeData(
     backgroundColor: CustomColors.primary,
     behavior: SnackBarBehavior.fixed,
   ),
-  dialogTheme: DialogTheme(
-    backgroundColor: CustomColors.white,
-  ),
+  dialogTheme: DialogTheme(backgroundColor: CustomColors.white),
   bottomSheetTheme: const BottomSheetThemeData(
-      dragHandleColor: Colors.grey,
-      backgroundColor: Colors.white,
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20), topRight: Radius.circular(20)))),
+    dragHandleColor: Colors.grey,
+    backgroundColor: Colors.white,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(20),
+        topRight: Radius.circular(20),
+      ),
+    ),
+  ),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      backgroundColor: CustomColors.white,
-      unselectedItemColor: CustomColors.grey,
-      selectedItemColor: CustomColors.white),
+    backgroundColor: CustomColors.white,
+    unselectedItemColor: CustomColors.grey,
+    selectedItemColor: CustomColors.white,
+  ),
   splashColor: CustomColors.white.withValues(alpha: .5),
   highlightColor: CustomColors.white.withValues(alpha: .5),
   textSelectionTheme: TextSelectionThemeData(
@@ -198,17 +201,22 @@ ThemeData lightTheme = ThemeData(
     // primarySwatch: CustomColors.primary
   ),
   listTileTheme: ListTileThemeData(
-      shape: RoundedRectangleBorder(
-          side: BorderSide(color: CustomColors.grey),
-          borderRadius: BorderRadius.circular(5))),
+    shape: RoundedRectangleBorder(
+      side: BorderSide(color: CustomColors.grey),
+      borderRadius: BorderRadius.circular(5),
+    ),
+  ),
   dividerColor: CustomColors.grey,
   textButtonTheme: const TextButtonThemeData(
-      style: ButtonStyle(
-          foregroundColor: WidgetStatePropertyAll(CustomColors.primary))),
+    style: ButtonStyle(
+      foregroundColor: WidgetStatePropertyAll(CustomColors.primary),
+    ),
+  ),
   appBarTheme: AppBarTheme(
-      color: CustomColors.white,
-      elevation: 0,
-      foregroundColor: CustomColors.black),
+    color: CustomColors.white,
+    elevation: 0,
+    foregroundColor: CustomColors.black,
+  ),
   primaryColorLight: CustomColors.primary.withValues(alpha: .5),
   brightness: Brightness.light,
   hintColor: CustomColors.grey,
@@ -217,13 +225,17 @@ ThemeData lightTheme = ThemeData(
   //     trackColor: WidgetStateProperty.all(CustomColors.bg)),
   floatingActionButtonTheme: const FloatingActionButtonThemeData(),
   elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ButtonStyle(
-          shape: WidgetStatePropertyAll(
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
-          fixedSize: const WidgetStatePropertyAll<Size>(Size(999, 40)),
-          backgroundColor: const WidgetStatePropertyAll(CustomColors.primary),
-          padding: const WidgetStatePropertyAll<EdgeInsetsGeometry>(
-              EdgeInsets.symmetric(horizontal: 10, vertical: 10)))),
+    style: ButtonStyle(
+      shape: WidgetStatePropertyAll(
+        RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      ),
+      fixedSize: const WidgetStatePropertyAll<Size>(Size(999, 40)),
+      backgroundColor: const WidgetStatePropertyAll(CustomColors.primary),
+      padding: const WidgetStatePropertyAll<EdgeInsetsGeometry>(
+        EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      ),
+    ),
+  ),
   textTheme: const TextTheme(
     // Main Heading
     displayLarge: TextStyle(
@@ -357,4 +369,5 @@ class CustomColors {
   static Color greenColor = const Color(0xFFDBF7E6);
   static Color checkBoxGreen = const Color(0xff07a27a);
   static Color cardColor = const Color(0xffF7F8F9);
+  static const Color dividerColor = Color(0xFFD8D8D8);
 }
