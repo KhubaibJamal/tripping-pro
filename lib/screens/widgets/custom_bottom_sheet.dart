@@ -58,7 +58,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
           child: Container(
             width: context.screenWidth,
             decoration: const BoxDecoration(
-              color: CustomColors.navBarColor,
+              color: CustomColors.primaryScreenColor,
               borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
             ),
             child: Padding(

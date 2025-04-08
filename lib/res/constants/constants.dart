@@ -7,6 +7,6 @@ class Constants {
   static const String progressLottieFile = 'loading.json';
   static const bool useLottieProgress = true;
 
-  static const String appName = '';
+  static const String appName = 'Tripping Pro';
   static const String cancel = 'Cancel';
 }

@@ -106,7 +106,7 @@ class CustomButton extends StatelessWidget {
                   title,
                   style: btnTextStyle ??
                       Theme.of(context).textTheme.displayLarge!.copyWith(
-                            color: textColor ?? CustomColors.primaryTextColor,
+                            color: textColor ?? CustomColors.white,
                             fontSize:
                                 fontSize ?? context.font.larger.rf(context),
                             fontWeight: FontWeight.w600,
@@ -120,10 +120,10 @@ class CustomButton extends StatelessWidget {
                     title,
                     style: btnTextStyle ??
                         Theme.of(context).textTheme.displayLarge!.copyWith(
-                              color: textColor ?? CustomColors.primaryTextColor,
+                              color: textColor ?? CustomColors.white,
                               fontSize:
                                   fontSize ?? context.font.larger.rf(context),
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w700,
                               letterSpacing: 1,
                               fontFamily: Constants.fontFamily,
                             ),
