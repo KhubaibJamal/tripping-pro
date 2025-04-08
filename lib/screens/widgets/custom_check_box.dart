@@ -24,29 +24,25 @@ class CustomCheckbox extends StatelessWidget {
       child: Container(
         height: 20,
         width: 20,
-        padding: const EdgeInsets.all(3),
+        // padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
           shape: BoxShape.rectangle,
-          color: boxColor ??
-              (isChecked ? CustomColors.primary : CustomColors.bodyTextColor),
+          color:
+              boxColor ??
+              (isChecked ? CustomColors.primary : CustomColors.white),
           borderRadius: BorderRadius.circular(5),
+          border: Border.all(color: CustomColors.primary, width: 2.0),
         ),
-        child: isChecked
-            ? Icon(
-                Icons.check,
-                color: svgIconColor ?? CustomColors.primaryTextColor,
-              )
-
-            // SvgPicture.asset(
-            //     MediaConstants.checkBoxIcon,
-            //     width: 12.0,
-            //     height: 12.0,
-            //     colorFilter: ColorFilter.mode(
-            //       svgIconColor ?? CustomColors.primaryTextColor,
-            //       BlendMode.srcIn,
-            //     ),
-            //   )
-            : null,
+        child:
+            isChecked
+                ? Center(
+                  child: Icon(
+                    Icons.check,
+                    size: 16,
+                    color: svgIconColor ?? CustomColors.primaryTextColor,
+                  ),
+                )
+                : null,
       ),
     );
   }
