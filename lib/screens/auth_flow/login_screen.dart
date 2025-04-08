@@ -22,6 +22,8 @@ class _LoginScreenState extends State<LoginScreen> {
     return CustomSafeArea(
       child: Scaffold(
         appBar: AppBar(
+          surfaceTintColor: CustomColors.primaryScreenColor,
+
           leading: Padding(
             padding: const EdgeInsets.all(16.0),
             child: GestureDetector(
