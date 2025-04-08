@@ -97,7 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Text(
                     "Tap here for reset",
                     style: TextStyle(
-                      color: Color(0xFF4C24B1),
+                      color: CustomColors.primary,
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.w400,
                       fontSize: 16,

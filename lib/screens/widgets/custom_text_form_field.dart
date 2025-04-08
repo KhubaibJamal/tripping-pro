@@ -191,10 +191,10 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
 
   Icon passwordIcon(bool obscure) {
     return obscure
-        ? const Icon(Icons.visibility, color: CustomColors.textFieldHintColor)
+        ? const Icon(Icons.visibility, color: CustomColors.primary)
         : const Icon(
           Icons.visibility_off,
-          color: CustomColors.textFieldHintColor,
+          color: CustomColors.primary,
         );
   }
 }
