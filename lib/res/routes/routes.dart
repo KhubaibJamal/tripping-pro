@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:tripping_pro/screens/auth_flow/login_screen.dart';
 import 'package:tripping_pro/screens/auth_flow/sign_up_screen.dart';
+import 'package:tripping_pro/screens/bottom_nav_bar/bottom_nav_bar.dart';
+import 'package:tripping_pro/screens/chat_screen/chat_screen.dart';
 import 'package:tripping_pro/screens/get_started_screen/get_started_screen.dart';
+import 'package:tripping_pro/screens/home/home_screen.dart';
+import 'package:tripping_pro/screens/notification_screen.dart/notification_screen.dart';
 import 'package:tripping_pro/screens/splash/splash_screen.dart';
 
 class RouteNames {
@@ -9,6 +13,10 @@ class RouteNames {
   static const String getStartedScreen = 'get_started_screen';
   static const String loginScreen = 'login_screen';
   static const String registerScreen = 'register_screen';
+  static const String homeScreen = 'home_screen';
+  static const String bottomNavBar = 'bottom_nav_bar';
+  static const String notificationScreen = 'notification_screen';
+  static const String chatScreen = 'chat_screen';
 }
 
 class Routes {
@@ -32,6 +40,26 @@ class Routes {
       case RouteNames.registerScreen:
         return MaterialPageRoute(
           builder: (BuildContext context) => const SignUpScreen(),
+        );
+
+      case RouteNames.homeScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const HomeScreen(),
+        );
+
+      case RouteNames.bottomNavBar:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const BottomNavBar(),
+        );
+
+      case RouteNames.notificationScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const NotificationScreen(),
+        );
+
+      case RouteNames.chatScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const ChatScreen(),
         );
 
       default:
