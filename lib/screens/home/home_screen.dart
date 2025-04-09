@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tripping_pro/res/constants/media_constants.dart';
+import 'package:tripping_pro/res/routes/routes.dart';
 import 'package:tripping_pro/res/theme/theme.dart';
 import 'package:tripping_pro/screens/home/widgets/popular_travelers.dart';
 import 'package:tripping_pro/screens/home/widgets/recent_itineraries_card.dart';
@@ -190,7 +191,12 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: RecentItinerariesCard(
                             imageUrl: itineraries[index]['imageUrl'],
                             title: itineraries[index]['title'],
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.pushNamed(
+                                context,
+                                RouteNames.chatScreen,
+                              );
+                            },
                           ),
                         );
                       },
