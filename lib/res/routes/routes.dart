@@ -4,6 +4,7 @@ import 'package:tripping_pro/screens/auth_flow/sign_up_screen.dart';
 import 'package:tripping_pro/screens/bottom_nav_bar/bottom_nav_bar.dart';
 import 'package:tripping_pro/screens/get_started_screen/get_started_screen.dart';
 import 'package:tripping_pro/screens/home/home_screen.dart';
+import 'package:tripping_pro/screens/notification_screen.dart/notification_screen.dart';
 import 'package:tripping_pro/screens/splash/splash_screen.dart';
 
 class RouteNames {
@@ -13,6 +14,7 @@ class RouteNames {
   static const String registerScreen = 'register_screen';
   static const String homeScreen = 'home_screen';
   static const String bottomNavBar = 'bottom_nav_bar';
+  static const String notificationScreen = 'notification_screen';
 }
 
 class Routes {
@@ -46,6 +48,11 @@ class Routes {
       case RouteNames.bottomNavBar:
         return MaterialPageRoute(
           builder: (BuildContext context) => const BottomNavBar(),
+        );
+
+      case RouteNames.notificationScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const NotificationScreen(),
         );
 
       default:

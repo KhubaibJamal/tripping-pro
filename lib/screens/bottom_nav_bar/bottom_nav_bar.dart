@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:tripping_pro/res/constants/media_constants.dart';
 import 'package:tripping_pro/res/theme/theme.dart';
 import 'package:tripping_pro/screens/home/home_screen.dart';
+import 'package:tripping_pro/screens/notification_screen.dart/notification_screen.dart';
 import 'package:tripping_pro/screens/widgets/custom_safearea.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -40,9 +41,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
     final List<Widget> screens = [
       const HomeScreen(),
       Container(color: Colors.blue),
-      Container(color: Colors.red),
+      const NotificationScreen(),
       Container(color: Colors.pink),
-      Container(color: Colors.black),
     ];
     return Scaffold(
       body: PageView(
@@ -95,6 +95,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
       onTap: () => _onItemTapped(index),
       child: SvgPicture.asset(
         isSelected ? svgFilledIcon : svgIcon,
+        colorFilter:
+            (isSelected && (index == 2 || index == 3))
+                ? const ColorFilter.mode(CustomColors.primary, BlendMode.srcIn)
+                : null,
         height: 24,
         width: 24,
       ),
