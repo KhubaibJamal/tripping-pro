@@ -3,6 +3,7 @@ import 'package:tripping_pro/screens/auth_flow/login_screen.dart';
 import 'package:tripping_pro/screens/auth_flow/sign_up_screen.dart';
 import 'package:tripping_pro/screens/bottom_nav_bar/bottom_nav_bar.dart';
 import 'package:tripping_pro/screens/chat_screen/chat_screen.dart';
+import 'package:tripping_pro/screens/explore_screen/explore_screen.dart';
 import 'package:tripping_pro/screens/get_started_screen/get_started_screen.dart';
 import 'package:tripping_pro/screens/home/home_screen.dart';
 import 'package:tripping_pro/screens/notification_screen.dart/notification_screen.dart';
@@ -19,6 +20,7 @@ class RouteNames {
   static const String notificationScreen = 'notification_screen';
   static const String chatScreen = 'chat_screen';
   static const String profileScreen = 'profile_screen';
+  static const String exploreScreen = 'explore_screen';
 }
 
 class Routes {
@@ -67,6 +69,11 @@ class Routes {
       case RouteNames.profileScreen:
         return MaterialPageRoute(
           builder: (BuildContext context) => const ProfileScreen(),
+        );
+
+      case RouteNames.exploreScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) =>  ExploreScreen(),
         );
 
       default:

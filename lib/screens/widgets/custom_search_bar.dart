@@ -6,6 +6,8 @@ class CustomSearchBar extends StatelessWidget {
   final Function(String)? onChanged;
   final bool? isTopBorder;
   final bool? isBottomBorder;
+  final Color? fillColor;
+  final bool? showBorder;
   const CustomSearchBar({
     super.key,
     required this.textController,
@@ -13,6 +15,8 @@ class CustomSearchBar extends StatelessWidget {
     this.onChanged,
     this.isTopBorder,
     this.isBottomBorder,
+    this.showBorder = false,
+    this.fillColor,
   });
 
   @override
@@ -30,13 +34,11 @@ class CustomSearchBar extends StatelessWidget {
       ),
       child: TextField(
         controller: textController,
-        onChanged: (value) {
-          //Do something wi
-        },
+        onChanged: onChanged,
         decoration: InputDecoration(
           prefixIcon: Icon(Icons.search, color: Color(0xFF292C2B)),
           filled: true,
-          fillColor: Colors.white,
+          fillColor: fillColor ?? Colors.white,
           hintText: hintText,
           hintStyle: const TextStyle(
             color: Colors.grey,
@@ -47,15 +49,24 @@ class CustomSearchBar extends StatelessWidget {
             horizontal: 16.0,
           ),
           border: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey[300]!, width: 1.0),
+            borderSide:
+                showBorder == true
+                    ? BorderSide(color: Colors.grey[300]!, width: 1.0)
+                    : BorderSide.none,
             borderRadius: getBorderRadius(),
           ),
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey[400]!, width: 1.5),
+            borderSide:
+                showBorder == true
+                    ? BorderSide(color: Colors.grey[400]!, width: 1.5)
+                    : BorderSide.none,
             borderRadius: getBorderRadius(),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey[400]!, width: 1.5),
+            borderSide:
+                showBorder == true
+                    ? BorderSide(color: Colors.grey[400]!, width: 1.5)
+                    : BorderSide.none,
             borderRadius: getBorderRadius(),
           ),
         ),
@@ -67,13 +78,9 @@ class CustomSearchBar extends StatelessWidget {
     return isTopBorder == null && isBottomBorder == null
         ? BorderRadius.circular(10)
         : isTopBorder == true
-        ? const BorderRadius.vertical(
-          top: Radius.circular(10),
-        )
+        ? const BorderRadius.vertical(top: Radius.circular(10))
         : isBottomBorder == true
-        ? const BorderRadius.vertical(
-          bottom: Radius.circular(10),
-        )
+        ? const BorderRadius.vertical(bottom: Radius.circular(10))
         : BorderRadius.zero;
   }
 }

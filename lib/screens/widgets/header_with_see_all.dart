@@ -4,12 +4,14 @@ class HeaderWithSeeAllButton extends StatelessWidget {
   final String title;
   final bool? isShowViewAll;
   final VoidCallback? onTap;
+  final bool? isBold;
 
   const HeaderWithSeeAllButton({
     super.key,
     required this.title,
     this.isShowViewAll = true,
     this.onTap,
+    this.isBold = false,
   });
 
   @override
@@ -21,7 +23,7 @@ class HeaderWithSeeAllButton extends StatelessWidget {
           title,
           style: TextStyle(
             fontFamily: 'Alata',
-            fontWeight: FontWeight.w400,
+            fontWeight: isBold == true ? FontWeight.bold : FontWeight.w400,
             fontSize: 20,
             height: 1.0,
             color: const Color(0xFF292C2B),
