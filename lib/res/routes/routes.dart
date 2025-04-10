@@ -6,6 +6,7 @@ import 'package:tripping_pro/screens/chat_screen/chat_screen.dart';
 import 'package:tripping_pro/screens/explore_screen/explore_screen.dart';
 import 'package:tripping_pro/screens/get_started_screen/get_started_screen.dart';
 import 'package:tripping_pro/screens/home/home_screen.dart';
+import 'package:tripping_pro/screens/my_booking_screen/my_booking_screen.dart';
 import 'package:tripping_pro/screens/notification_screen.dart/notification_screen.dart';
 import 'package:tripping_pro/screens/profile_screen/profile_screen.dart';
 import 'package:tripping_pro/screens/splash/splash_screen.dart';
@@ -21,6 +22,7 @@ class RouteNames {
   static const String chatScreen = 'chat_screen';
   static const String profileScreen = 'profile_screen';
   static const String exploreScreen = 'explore_screen';
+  static const String myBookingScreen = 'my_booking_screen';
 }
 
 class Routes {
@@ -73,7 +75,12 @@ class Routes {
 
       case RouteNames.exploreScreen:
         return MaterialPageRoute(
-          builder: (BuildContext context) =>  ExploreScreen(),
+          builder: (BuildContext context) => ExploreScreen(),
+        );
+
+      case RouteNames.myBookingScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const MyBookingScreen(),
         );
 
       default:
