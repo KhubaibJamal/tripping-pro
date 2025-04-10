@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tripping_pro/res/constants/media_constants.dart';
-import 'package:tripping_pro/res/routes/routes.dart';
 import 'package:tripping_pro/res/theme/theme.dart';
-import 'package:tripping_pro/screens/home/widgets/popular_travelers.dart';
-import 'package:tripping_pro/screens/home/widgets/recent_itineraries_card.dart';
-import 'package:tripping_pro/screens/widgets/custom_search_bar.dart';
-import 'package:tripping_pro/screens/widgets/header_with_see_all.dart';
+import 'package:tripping_pro/screens/widgets/custom_text_form_field.dart';
 import 'package:tripping_pro/utils/responsiveSize.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -94,7 +90,6 @@ class ProfileScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-
                         Positioned(
                           bottom: 10,
                           right: 10,
@@ -106,9 +101,101 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ],
             ),
+
+            SizedBox(height: 50.rh(context)),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 30.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _buildTextField(
+                    context,
+                    hintText: 'Enter your name',
+                    labelText: 'Name',
+                    controller: TextEditingController(),
+                    isPasswordField: false,
+                  ),
+                  SizedBox(height: 20.rh(context)),
+                  _buildTextField(
+                    context,
+                    hintText: 'Enter your email',
+                    labelText: 'Email',
+                    controller: TextEditingController(),
+                    isPasswordField: false,
+                  ),
+                  SizedBox(height: 20.rh(context)),
+                  _buildTextField(
+                    context,
+                    hintText: 'Enter your password',
+                    labelText: 'Password',
+                    controller: TextEditingController(),
+                    isPasswordField: true,
+                  ),
+
+                  // also add three more field: Date of birth, phone number and country
+                  SizedBox(height: 20.rh(context)),
+                  _buildTextField(
+                    context,
+                    hintText: 'Enter your date of birth',
+                    labelText: 'Date of Birth',
+                    controller: TextEditingController(),
+                    isPasswordField: false,
+                  ),
+                  SizedBox(height: 20.rh(context)),
+                  _buildTextField(
+                    context,
+                    hintText: 'Enter your phone number',
+                    labelText: 'Phone Number',
+                    controller: TextEditingController(),
+                    isPasswordField: false,
+                  ),
+                  SizedBox(height: 20.rh(context)),
+                  _buildTextField(
+                    context,
+                    hintText: 'Enter your country',
+                    labelText: 'Country',
+                    controller: TextEditingController(),
+                    isPasswordField: false,
+                  ),
+                  SizedBox(height: 20.rh(context)),
+                ],
+              ),
+            ),
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildTextField(
+    BuildContext context, {
+    required String hintText,
+    required String labelText,
+    required TextEditingController controller,
+    required bool isPasswordField,
+  }) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          labelText,
+          style: TextStyle(
+            color: CustomColors.black,
+            fontFamily: 'Inter',
+            fontWeight: FontWeight.w700,
+            fontSize: 16,
+            height: 0.88,
+            letterSpacing: 0.0,
+          ),
+        ),
+        SizedBox(height: 10.rh(context)),
+        CustomTextFormField(
+          hintText: hintText,
+          controller: controller,
+          isPasswordField: isPasswordField,
+          hasFullBorder: true,
+        ),
+      ],
     );
   }
 }

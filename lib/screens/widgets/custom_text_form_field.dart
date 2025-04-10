@@ -40,6 +40,7 @@ class CustomTextFormField extends StatefulWidget {
     this.searchSvgColor,
     this.autofillHints,
     this.prefixContainer,
+    this.hasFullBorder = false,
   });
   final String? hintText;
   final TextEditingController? controller;
@@ -75,6 +76,7 @@ class CustomTextFormField extends StatefulWidget {
   final EdgeInsets? contentPadding;
   final Color? searchSvgColor;
   final List<String>? autofillHints;
+  final bool? hasFullBorder;
 
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
@@ -164,27 +166,60 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             ),
         filled: true,
         fillColor: widget.fillColor ?? CustomColors.textFieldFillColor,
-        border: UnderlineInputBorder(
-          borderSide: BorderSide(
-            color: CustomColors.textFieldBorder,
-            width: 2.0,
-          ),
-        ),
-        focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(
-            color: CustomColors.textFieldBorder,
-            width: 2.0,
-          ),
-        ),
-        errorBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.red, width: 2.0),
-        ),
-        enabledBorder: UnderlineInputBorder(
-          borderSide: BorderSide(
-            color: CustomColors.textFieldBorder,
-            width: 2.0,
-          ),
-        ),
+        border:
+            widget.hasFullBorder == true
+                ? OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(
+                    color: CustomColors.textFieldBorder,
+                    width: 2.0,
+                  ),
+                )
+                : UnderlineInputBorder(
+                  borderSide: BorderSide(
+                    color: CustomColors.textFieldBorder,
+                    width: 2.0,
+                  ),
+                ),
+        focusedBorder:
+            widget.hasFullBorder == true
+                ? OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(
+                    color: CustomColors.textFieldBorder,
+                    width: 2.0,
+                  ),
+                )
+                : UnderlineInputBorder(
+                  borderSide: BorderSide(
+                    color: CustomColors.textFieldBorder,
+                    width: 2.0,
+                  ),
+                ),
+        enabledBorder:
+            widget.hasFullBorder == true
+                ? OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(
+                    color: CustomColors.textFieldBorder,
+                    width: 2.0,
+                  ),
+                )
+                : UnderlineInputBorder(
+                  borderSide: BorderSide(
+                    color: CustomColors.textFieldBorder,
+                    width: 2.0,
+                  ),
+                ),
+        errorBorder:
+            widget.hasFullBorder == true
+                ? OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: const BorderSide(color: Colors.red, width: 2.0),
+                )
+                : const UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.red, width: 2.0),
+                ),
       ),
     );
   }
@@ -192,9 +227,6 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   Icon passwordIcon(bool obscure) {
     return obscure
         ? const Icon(Icons.visibility, color: CustomColors.primary)
-        : const Icon(
-          Icons.visibility_off,
-          color: CustomColors.primary,
-        );
+        : const Icon(Icons.visibility_off, color: CustomColors.primary);
   }
 }
