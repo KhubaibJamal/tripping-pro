@@ -4,6 +4,7 @@ import 'package:tripping_pro/res/constants/media_constants.dart';
 import 'package:tripping_pro/res/theme/theme.dart';
 import 'package:tripping_pro/screens/home/home_screen.dart';
 import 'package:tripping_pro/screens/notification_screen.dart/notification_screen.dart';
+import 'package:tripping_pro/screens/profile_screen/profile_screen.dart';
 import 'package:tripping_pro/screens/widgets/custom_safearea.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -42,7 +43,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       const HomeScreen(),
       Container(color: Colors.blue),
       const NotificationScreen(),
-      Container(color: Colors.pink),
+      const ProfileScreen(),
     ];
     return Scaffold(
       body: PageView(

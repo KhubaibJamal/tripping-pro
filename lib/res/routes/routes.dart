@@ -6,6 +6,7 @@ import 'package:tripping_pro/screens/chat_screen/chat_screen.dart';
 import 'package:tripping_pro/screens/get_started_screen/get_started_screen.dart';
 import 'package:tripping_pro/screens/home/home_screen.dart';
 import 'package:tripping_pro/screens/notification_screen.dart/notification_screen.dart';
+import 'package:tripping_pro/screens/profile_screen/profile_screen.dart';
 import 'package:tripping_pro/screens/splash/splash_screen.dart';
 
 class RouteNames {
@@ -17,6 +18,7 @@ class RouteNames {
   static const String bottomNavBar = 'bottom_nav_bar';
   static const String notificationScreen = 'notification_screen';
   static const String chatScreen = 'chat_screen';
+  static const String profileScreen = 'profile_screen';
 }
 
 class Routes {
@@ -60,6 +62,11 @@ class Routes {
       case RouteNames.chatScreen:
         return MaterialPageRoute(
           builder: (BuildContext context) => const ChatScreen(),
+        );
+
+      case RouteNames.profileScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const ProfileScreen(),
         );
 
       default:

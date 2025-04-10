@@ -31,5 +31,6 @@ class MediaConstants {
   static const String share = "${svgPath}share.svg";
   static const String heart = "${svgPath}heart.svg";
   static const String chatBotIcon = "${svgPath}chat_bot_icon.svg";
+  static const String camera = "${svgPath}camera.svg";
 
 }
