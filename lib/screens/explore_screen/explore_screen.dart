@@ -1,9 +1,10 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tripping_pro/res/constants/media_constants.dart';
 import 'package:tripping_pro/res/theme/theme.dart';
+import 'package:tripping_pro/screens/explore_screen/widget/story_widget.dart';
+import 'package:tripping_pro/screens/explore_screen/widget/trending_destination.dart';
 import 'package:tripping_pro/screens/widgets/custom_safearea.dart';
 import 'package:tripping_pro/screens/widgets/custom_search_bar.dart';
 import 'package:tripping_pro/screens/widgets/header_with_see_all.dart';
@@ -116,7 +117,7 @@ class ExploreScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: const EdgeInsets.only(right: 16.0),
-                      child: TendingDestinationCard(
+                      child: TrendingDestinationCard(
                         airlines: destinations[index]['airlines'],
                         country: destinations[index]['country'],
                         city: destinations[index]['city'],
@@ -166,192 +167,11 @@ class ExploreScreen extends StatelessWidget {
                 ),
               ),
             ),
+
+            SizedBox(height: 20.rh(context)),
           ],
         ),
       ),
-    );
-  }
-}
-
-class StoryWidget extends StatelessWidget {
-  final String imageUrl;
-  final String title;
-
-  const StoryWidget({super.key, required this.imageUrl, required this.title});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          padding: const EdgeInsets.all(3),
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            border: Border.all(color: CustomColors.primary, width: 2),
-          ),
-          child: CircleAvatar(
-            radius: 30,
-            backgroundImage: NetworkImage(imageUrl),
-          ),
-        ),
-        const SizedBox(height: 8),
-        Text(
-          title.toUpperCase(),
-          style: TextStyle(
-            color: CustomColors.primaryTextColor,
-            fontFamily: 'Poppins',
-            fontWeight: FontWeight.w400,
-            fontSize: 14,
-            height: 1.0,
-            letterSpacing: 0.0,
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class TendingDestinationCard extends StatelessWidget {
-  final String airlines;
-  final String country;
-  final String city;
-  final String imageUrl;
-  const TendingDestinationCard({
-    super.key,
-    required this.airlines,
-    required this.country,
-    required this.city,
-    required this.imageUrl,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          height: 240.rh(context),
-          width: 200.rw(context),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            image: DecorationImage(
-              image: NetworkImage(imageUrl),
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
-
-        // airlines
-        Positioned(
-          top: 10.rh(context),
-          left: 10.rw(context),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(33),
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 8.0),
-                decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.15),
-                  borderRadius: BorderRadius.circular(33),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      airlines,
-                      style: TextStyle(
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w700,
-                        fontSize: 12,
-                        color: CustomColors.white,
-                        height: 1.0,
-                        letterSpacing: 0.0,
-                      ),
-                    ),
-                    Text(
-                      " Airlines",
-                      style: TextStyle(
-                        color: CustomColors.white,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w300,
-                        fontSize: 12,
-                        height: 1.0,
-                        letterSpacing: 0.0,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ),
-
-        // city, country
-        Positioned(
-          top: 190,
-          left: 0,
-          right: 0,
-          child: Center(
-            child: Padding(
-              padding: const EdgeInsets.only(left: 30.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    city,
-                    style: TextStyle(
-                      color: CustomColors.white,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 14,
-                      height: 1.0,
-                      letterSpacing: 0.0,
-                    ),
-                  ),
-                  SizedBox(height: 5.rh(context)),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      // const Spacer(),
-                      Text(
-                        country,
-                        style: TextStyle(
-                          color: CustomColors.white,
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.w600,
-                          fontSize: 24,
-                          height: 1.0,
-                          letterSpacing: 0.0,
-                        ),
-                      ),
-                      const Spacer(),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(33),
-                        child: BackdropFilter(
-                          filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-                          child: Container(
-                            padding: EdgeInsets.all(12.0),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withValues(alpha: 0.15),
-                              borderRadius: BorderRadius.circular(33),
-                            ),
-                            child: Icon(
-                              Icons.arrow_forward_ios,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-
-                      SizedBox(width: 10.rw(context)),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ],
     );
   }
 }
