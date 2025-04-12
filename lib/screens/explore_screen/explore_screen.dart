@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tripping_pro/res/constants/media_constants.dart';
-import 'package:tripping_pro/res/routes/routes.dart';
 import 'package:tripping_pro/res/theme/theme.dart';
 import 'package:tripping_pro/screens/explore_screen/widget/story_widget.dart';
 import 'package:tripping_pro/screens/explore_screen/widget/trending_destination.dart';
+import 'package:tripping_pro/screens/guide_screen/guide_screen.dart';
 import 'package:tripping_pro/screens/widgets/custom_safearea.dart';
 import 'package:tripping_pro/screens/widgets/custom_search_bar.dart';
 import 'package:tripping_pro/screens/widgets/header_with_see_all.dart';
@@ -118,17 +118,21 @@ class ExploreScreen extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: const EdgeInsets.only(right: 16.0),
-                        child: TrendingDestinationCard(
-                          airlines: destinations[index]['airlines'],
-                          country: destinations[index]['country'],
-                          city: destinations[index]['city'],
-                          imageUrl: destinations[index]['imageUrl'],
+                        child: GestureDetector(
                           onTap: () {
-                            Navigator.pushNamed(
+                            Navigator.push(
                               context,
-                              RouteNames.guideScreen,
+                              MaterialPageRoute(
+                                builder: (context) => GuideScreen(),
+                              ),
                             );
                           },
+                          child: TrendingDestinationCard(
+                            airlines: destinations[index]['airlines'],
+                            country: destinations[index]['country'],
+                            city: destinations[index]['city'],
+                            imageUrl: destinations[index]['imageUrl']??'',
+                          ),
                         ),
                       );
                     },
@@ -176,154 +180,6 @@ class ExploreScreen extends StatelessWidget {
               ),
 
               SizedBox(height: 20.rh(context)),
-
-              Container(
-                height: 100.rh(context),
-                padding: EdgeInsets.all(12.0),
-
-                child: Row(
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "KHI",
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w500,
-                            fontSize: 28,
-                            height: 22 / 28,
-                            letterSpacing: 0,
-                          ),
-                        ),
-
-                        Text(
-                          "12:33",
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w400,
-                            fontSize: 12,
-                            height: 22 / 12,
-                            letterSpacing: 0,
-                            color: const Color(0xFF6B6B6B),
-                          ),
-                        ),
-                        Spacer(),
-                        Text(
-                          "AIRBLUE",
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w500,
-                            fontSize: 16,
-                            height: 22 / 16,
-                            letterSpacing: 0,
-                            color: CustomColors.bodyTextColor,
-                          ),
-                        ),
-                      ],
-                    ),
-
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "DXB",
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w500,
-                            fontSize: 28,
-                            height: 22 / 28,
-                            letterSpacing: 0,
-                          ),
-                        ),
-
-                        Text(
-                          "15:33",
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w400,
-                            fontSize: 12,
-                            height: 22 / 12,
-                            letterSpacing: 0,
-                            color: const Color(0xFF6B6B6B),
-                          ),
-                        ),
-                      ],
-                    ),
-
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        RichText(
-                          text: TextSpan(
-                            text: 'Terminal',
-                            style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.w300,
-                              fontSize: 12,
-                              height: 22 / 12,
-                              letterSpacing: 0,
-                              color: Color(0xFF9F9F9F),
-                            ),
-                            children: <TextSpan>[
-                              TextSpan(
-                                text: '\t\tA',
-                                style: TextStyle(
-                                  fontFamily: 'Poppins',
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 12,
-                                  height: 22 / 12,
-                                  letterSpacing: 0,
-                                  color: const Color(0xFF595959),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        RichText(
-                          text: TextSpan(
-                            text: 'Gate',
-                            style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.w300,
-                              fontSize: 12,
-                              height: 22 / 12,
-                              letterSpacing: 0,
-                              color: Color(0xFF9F9F9F),
-                            ),
-                            children: <TextSpan>[
-                              TextSpan(
-                                text: '\t\t226',
-                                style: TextStyle(
-                                  fontFamily: 'Poppins',
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 12,
-                                  height: 22 / 12,
-                                  letterSpacing: 0,
-                                  color: const Color(0xFF595959),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-
-                        Spacer(),
-                        Text(
-                          "\$214.06",
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w600,
-                            fontSize: 16,
-                            height: 22 / 16,
-                            letterSpacing: 0,
-                            color: CustomColors.primary,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
             ],
           ),
         ),
