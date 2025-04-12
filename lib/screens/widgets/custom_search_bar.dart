@@ -8,6 +8,7 @@ class CustomSearchBar extends StatelessWidget {
   final bool? isBottomBorder;
   final Color? fillColor;
   final bool? showBorder;
+  final VoidCallback? onTap;
   const CustomSearchBar({
     super.key,
     required this.textController,
@@ -17,6 +18,7 @@ class CustomSearchBar extends StatelessWidget {
     this.isBottomBorder,
     this.showBorder = false,
     this.fillColor,
+    this.onTap,
   });
 
   @override
@@ -32,7 +34,8 @@ class CustomSearchBar extends StatelessWidget {
           ),
         ],
       ),
-      child: TextField(
+      child: TextFormField(
+        onTap: onTap,
         controller: textController,
         onChanged: onChanged,
         decoration: InputDecoration(

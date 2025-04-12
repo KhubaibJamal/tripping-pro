@@ -173,6 +173,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           isBottomBorder: true,
                           textController: searchController,
                           hintText: "Ask Anything",
+                          onTap: () {
+                            Navigator.pushNamed(context, RouteNames.chatScreen);
+                          },
                         ),
                       ),
                     ],
@@ -199,12 +202,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: RecentItinerariesCard(
                             imageUrl: itineraries[index]['imageUrl'],
                             title: itineraries[index]['title'],
-                            onTap: () {
-                              Navigator.pushNamed(
-                                context,
-                                RouteNames.chatScreen,
-                              );
-                            },
+                            onTap: () {},
                           ),
                         );
                       },
