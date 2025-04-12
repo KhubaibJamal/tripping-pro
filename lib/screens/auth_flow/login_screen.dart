@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tripping_pro/res/constants/media_constants.dart';
+import 'package:tripping_pro/res/routes/routes.dart';
 import 'package:tripping_pro/res/theme/theme.dart';
 import 'package:tripping_pro/screens/widgets/custom_button.dart';
 import 'package:tripping_pro/screens/widgets/custom_safearea.dart';
@@ -74,7 +75,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 SizedBox(height: 30.rh(context)),
 
-                CustomButton(onPressed: () {}, buttonTitle: "Login"),
+                CustomButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, RouteNames.bottomNavBar);
+                  },
+                  buttonTitle: "Login",
+                ),
 
                 SizedBox(height: 30.rh(context)),
                 Align(
