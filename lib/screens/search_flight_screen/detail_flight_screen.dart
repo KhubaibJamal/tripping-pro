@@ -27,9 +27,7 @@ class DetailFlightScreen extends StatelessWidget {
                       bottom: Radius.circular(42),
                     ),
                     image: DecorationImage(
-                      image: NetworkImage(
-                        'https://plus.unsplash.com/premium_photo-1679830513873-5f9163fcc04a?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-                      ),
+                      image:  AssetImage('assets/images/flight.jpg'),
                       fit: BoxFit.cover,
                     ),
                   ),

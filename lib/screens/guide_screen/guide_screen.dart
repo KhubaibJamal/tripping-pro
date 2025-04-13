@@ -23,9 +23,7 @@ class _GuideScreenState extends State<GuideScreen> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: NetworkImage(
-              'https://s3-alpha-sig.figma.com/img/9e3b/79f7/3090eb98068796b31899afe99a38a21c?Expires=1745193600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=MlXLwbkp5ghgwmD-TpYXzW9OH0iQqpdatkI3bpOogI2Sb-~0qIwrBK46KcM6bbUlBbkFvjLiA9C772JJ2G8w20FDfp~JbUV-Bs-JM0iecLmk1FS4tYU9JcwB50lhfmeyKJqk4arcLmugu4x2cnj9SITrX7ahQvxtW5OCpk7S3QImOm32235p5wE3IGlDEKsWBfeWEaG9WjbVDZZwqW-2a28orbzX-tALM41TFALPFm32PjDKSL1TfPbzHD8Svpoct61o-Jj73OViSuA8b8dqyk7QxSIgsST8n92oDNcnyx5rkdag9CxX83-6W-eSRo33c38tYh7wPk-rg~hAtTgHFA__',
-            ),
+            image: AssetImage('assets/images/flight.jpg'),
             fit: BoxFit.cover,
           ),
         ),

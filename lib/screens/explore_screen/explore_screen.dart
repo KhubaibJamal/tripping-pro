@@ -18,47 +18,47 @@ class ExploreScreen extends StatelessWidget {
       "airlines": "12",
       "country": "USA",
       "city": "New York",
-      "imageUrl": "https://picsum.photos/200",
+      "imageUrl": "assets/images/home_bg.png",
     },
     {
       "airlines": "15",
       "country": "USA",
       "city": "New York",
-      "imageUrl": "https://picsum.photos/500",
+      "imageUrl": "assets/images/new_year.png",
     },
     {
       "airlines": "22",
       "country": "USA",
       "city": "New York",
-      "imageUrl": "https://picsum.photos/300",
+      "imageUrl": "assets/images/valleys.png",
     },
     {
       "airlines": "19",
       "country": "USA",
       "city": "New York",
-      "imageUrl": "https://picsum.photos/400",
+      "imageUrl": "assets/images/home_bg.png",
     },
     {
       "airlines": "12",
       "country": "USA",
       "city": "New York",
-      "imageUrl": "https://picsum.photos/500",
+      "imageUrl": "assets/images/new_year.png",
     },
     {
       "airlines": "64",
       "country": "Tokyo",
       "city": "Japan",
-      "imageUrl": "https://picsum.photos/600",
+      "imageUrl": "assets/images/valleys.png",
     },
   ];
 
   final Map<String, String> countryStories = {
-    'Agra': 'https://picsum.photos/200',
-    'Paris': 'https://picsum.photos/300',
-    'Tokyo': 'https://picsum.photos/400',
-    'Cairo': 'https://picsum.photos/500',
-    'Bali': 'https://picsum.photos/700',
-    'Pak': 'https://picsum.photos/600',
+    'Agra': 'assets/images/home_bg.png',
+    'Paris': 'assets/images/new_year.png',
+    'Tokyo': 'assets/images/valleys.png',
+    'Cairo': 'assets/images/home_bg.png',
+    'Bali': 'assets/images/new_year.png',
+    'Pak': 'assets/images/valleys.png',
   };
   @override
   Widget build(BuildContext context) {

@@ -29,7 +29,7 @@ class TrendingDestinationCard extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           image: DecorationImage(
-            image: NetworkImage(imageUrl),
+            image: AssetImage(imageUrl),
             onError: (exception, stackTrace) {
               if (kDebugMode) {
                 print('Image load error: $exception');

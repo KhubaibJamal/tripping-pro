@@ -19,7 +19,7 @@ class StoryWidget extends StatelessWidget {
           ),
           child: CircleAvatar(
             radius: 30,
-            backgroundImage: NetworkImage(imageUrl),
+            backgroundImage: AssetImage(imageUrl),
           ),
         ),
         const SizedBox(height: 8),
