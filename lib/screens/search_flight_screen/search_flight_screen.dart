@@ -48,15 +48,20 @@ class _SearchFlightScreenState extends State<SearchFlightScreen> {
                       alignment: Alignment.topLeft,
                       child: Padding(
                         padding: EdgeInsets.only(left: 20),
-                        child: Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            shape: BoxShape.circle,
-                          ),
-                          child: Center(
-                            child: SvgPicture.asset(MediaConstants.arrowLeft),
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: Container(
+                            height: 50,
+                            width: 50,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                            ),
+                            child: Center(
+                              child: SvgPicture.asset(MediaConstants.arrowLeft),
+                            ),
                           ),
                         ),
                       ),
@@ -156,7 +161,9 @@ class _SearchFlightScreenState extends State<SearchFlightScreen> {
                               ),
                             ),
                             Spacer(),
-                            SvgPicture.asset(MediaConstants.doubleArrowHorizontal),
+                            SvgPicture.asset(
+                              MediaConstants.doubleArrowHorizontal,
+                            ),
                             Spacer(),
                             Text(
                               "Dubai",

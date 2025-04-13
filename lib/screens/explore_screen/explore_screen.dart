@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tripping_pro/res/constants/media_constants.dart';
+import 'package:tripping_pro/res/routes/routes.dart';
 import 'package:tripping_pro/res/theme/theme.dart';
 import 'package:tripping_pro/screens/explore_screen/widget/story_widget.dart';
 import 'package:tripping_pro/screens/explore_screen/widget/trending_destination.dart';
-import 'package:tripping_pro/screens/guide_screen/guide_screen.dart';
 import 'package:tripping_pro/screens/widgets/custom_safearea.dart';
 import 'package:tripping_pro/screens/widgets/custom_search_bar.dart';
 import 'package:tripping_pro/screens/widgets/header_with_see_all.dart';
@@ -118,21 +118,17 @@ class ExploreScreen extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: const EdgeInsets.only(right: 16.0),
-                        child: GestureDetector(
+                        child: TrendingDestinationCard(
+                          airlines: destinations[index]['airlines'],
+                          country: destinations[index]['country'],
+                          city: destinations[index]['city'],
+                          imageUrl: destinations[index]['imageUrl'] ?? '',
                           onTap: () {
-                            Navigator.push(
+                            Navigator.pushNamed(
                               context,
-                              MaterialPageRoute(
-                                builder: (context) => GuideScreen(),
-                              ),
+                              RouteNames.guideScreen,
                             );
                           },
-                          child: TrendingDestinationCard(
-                            airlines: destinations[index]['airlines'],
-                            country: destinations[index]['country'],
-                            city: destinations[index]['city'],
-                            imageUrl: destinations[index]['imageUrl']??'',
-                          ),
                         ),
                       );
                     },
