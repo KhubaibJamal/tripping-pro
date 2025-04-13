@@ -10,6 +10,7 @@ import 'package:tripping_pro/screens/home/home_screen.dart';
 import 'package:tripping_pro/screens/my_booking_screen/my_booking_screen.dart';
 import 'package:tripping_pro/screens/notification_screen.dart/notification_screen.dart';
 import 'package:tripping_pro/screens/profile_screen/profile_screen.dart';
+import 'package:tripping_pro/screens/search_flight_screen/book_flight_screen.dart';
 import 'package:tripping_pro/screens/search_flight_screen/detail_flight_screen.dart';
 import 'package:tripping_pro/screens/search_flight_screen/search_flight_screen.dart';
 import 'package:tripping_pro/screens/splash/splash_screen.dart';
@@ -29,6 +30,7 @@ class RouteNames {
   static const String guideScreen = 'guide_screen';
   static const String searchFlightScreen = 'search_flight_screen';
   static const String detailFlightScreen = 'detail_flight_screen';
+  static const String bookingFlightScreen = 'booking_flight_screen';
 }
 
 class Routes {
@@ -102,6 +104,12 @@ class Routes {
       case RouteNames.detailFlightScreen:
         return MaterialPageRoute(
           builder: (BuildContext context) => const DetailFlightScreen(),
+        );
+
+        
+      case RouteNames.bookingFlightScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const BookingFlightScreen(),
         );
 
       default:

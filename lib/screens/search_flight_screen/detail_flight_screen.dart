@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tripping_pro/res/constants/media_constants.dart';
+import 'package:tripping_pro/res/routes/routes.dart';
 import 'package:tripping_pro/res/theme/theme.dart';
 import 'package:tripping_pro/utils/responsiveSize.dart';
 
@@ -336,7 +337,9 @@ class FlightDetailBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.pushNamed(context, RouteNames.bookingFlightScreen);
+      },
       child: Container(
         height: 100.rh(context),
         color: Colors.transparent,
