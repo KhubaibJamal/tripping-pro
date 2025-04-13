@@ -1,11 +1,7 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tripping_pro/res/constants/media_constants.dart';
 import 'package:tripping_pro/res/theme/theme.dart';
-import 'package:tripping_pro/screens/widgets/custom_button.dart';
-import 'package:tripping_pro/screens/widgets/custom_radio_button.dart';
-import 'package:tripping_pro/screens/widgets/custom_text_form_field.dart';
 import 'package:tripping_pro/utils/responsiveSize.dart';
 
 class DetailFlightScreen extends StatelessWidget {
@@ -14,7 +10,6 @@ class DetailFlightScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
-    var width = MediaQuery.of(context).size.width;
     var availableHeight = height - (height * 0.2 + height * 0.08);
     return Scaffold(
       backgroundColor: Color(0xFFF8F8F8),
@@ -47,16 +42,21 @@ class DetailFlightScreen extends StatelessWidget {
                             alignment: Alignment.topLeft,
                             child: Padding(
                               padding: EdgeInsets.only(left: 20),
-                              child: Container(
-                                height: 50,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Center(
-                                  child: SvgPicture.asset(
-                                    MediaConstants.arrowLeft,
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.pop(context);
+                                },
+                                child: Container(
+                                  height: 50,
+                                  width: 50,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Center(
+                                    child: SvgPicture.asset(
+                                      MediaConstants.arrowLeft,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -309,6 +309,15 @@ class DetailFlightScreen extends StatelessWidget {
                           SvgPicture.asset(MediaConstants.doubleArrowVertical),
                         ],
                       ),
+                      SizedBox(height: 20.rh(context)),
+                      FlightDetailBox(),
+                      SizedBox(height: 20.rh(context)),
+                      Divider(color: Colors.grey),
+                      FlightDetailBox(),
+                      SizedBox(height: 20.rh(context)),
+                      Divider(color: Colors.grey),
+                      FlightDetailBox(),
+                      SizedBox(height: 20.rh(context)),
                     ],
                   ),
                 ),
@@ -326,152 +335,154 @@ class FlightDetailBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 100.rh(context),
-      padding: EdgeInsets.symmetric(horizontal: 20.0),
-      color: CustomColors.white,
-
-      child: Row(
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "KHI",
-                style: TextStyle(
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w500,
-                  fontSize: 28,
-                  height: 22 / 28,
-                  letterSpacing: 0,
-                ),
-              ),
-
-              Text(
-                "12:33",
-                style: TextStyle(
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w400,
-                  fontSize: 12,
-                  height: 22 / 12,
-                  letterSpacing: 0,
-                  color: const Color(0xFF6B6B6B),
-                ),
-              ),
-              Spacer(),
-              Text(
-                "AIRBLUE",
-                style: TextStyle(
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w500,
-                  fontSize: 16,
-                  height: 22 / 16,
-                  letterSpacing: 0,
-                  color: CustomColors.bodyTextColor,
-                ),
-              ),
-            ],
-          ),
-
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "DXB",
-                style: TextStyle(
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w500,
-                  fontSize: 28,
-                  height: 22 / 28,
-                  letterSpacing: 0,
-                ),
-              ),
-
-              Text(
-                "15:33",
-                style: TextStyle(
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w400,
-                  fontSize: 12,
-                  height: 22 / 12,
-                  letterSpacing: 0,
-                  color: const Color(0xFF6B6B6B),
-                ),
-              ),
-            ],
-          ),
-
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              RichText(
-                text: TextSpan(
-                  text: 'Terminal',
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+        height: 100.rh(context),
+        color: Colors.transparent,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "KHI",
                   style: TextStyle(
                     fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w300,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 28,
+                    height: 22 / 28,
+                    letterSpacing: 0,
+                  ),
+                ),
+
+                Text(
+                  "12:33",
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w400,
                     fontSize: 12,
                     height: 22 / 12,
                     letterSpacing: 0,
-                    color: Color(0xFF9F9F9F),
+                    color: const Color(0xFF6B6B6B),
                   ),
-                  children: <TextSpan>[
-                    TextSpan(
-                      text: '\t\tA',
-                      style: TextStyle(
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w700,
-                        fontSize: 12,
-                        height: 22 / 12,
-                        letterSpacing: 0,
-                        color: const Color(0xFF595959),
-                      ),
-                    ),
-                  ],
                 ),
-              ),
-              RichText(
-                text: TextSpan(
-                  text: 'Gate',
+                Spacer(),
+                Text(
+                  "AIRBLUE",
                   style: TextStyle(
                     fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w300,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16,
+                    height: 22 / 16,
+                    letterSpacing: 0,
+                    color: CustomColors.bodyTextColor,
+                  ),
+                ),
+              ],
+            ),
+
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "DXB",
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w500,
+                    fontSize: 28,
+                    height: 22 / 28,
+                    letterSpacing: 0,
+                  ),
+                ),
+
+                Text(
+                  "15:33",
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w400,
                     fontSize: 12,
                     height: 22 / 12,
                     letterSpacing: 0,
-                    color: Color(0xFF9F9F9F),
+                    color: const Color(0xFF6B6B6B),
                   ),
-                  children: <TextSpan>[
-                    TextSpan(
-                      text: '\t\t226',
-                      style: TextStyle(
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w700,
-                        fontSize: 12,
-                        height: 22 / 12,
-                        letterSpacing: 0,
-                        color: const Color(0xFF595959),
-                      ),
-                    ),
-                  ],
                 ),
-              ),
+              ],
+            ),
 
-              Spacer(),
-              Text(
-                "\$214.06",
-                style: TextStyle(
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16,
-                  height: 22 / 16,
-                  letterSpacing: 0,
-                  color: CustomColors.primary,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                RichText(
+                  text: TextSpan(
+                    text: 'Terminal',
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w300,
+                      fontSize: 12,
+                      height: 22 / 12,
+                      letterSpacing: 0,
+                      color: Color(0xFF9F9F9F),
+                    ),
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: '\t\tA',
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w700,
+                          fontSize: 12,
+                          height: 22 / 12,
+                          letterSpacing: 0,
+                          color: const Color(0xFF595959),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
-          ),
-        ],
+                RichText(
+                  text: TextSpan(
+                    text: 'Gate',
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w300,
+                      fontSize: 12,
+                      height: 22 / 12,
+                      letterSpacing: 0,
+                      color: Color(0xFF9F9F9F),
+                    ),
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: '\t\t226',
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w700,
+                          fontSize: 12,
+                          height: 22 / 12,
+                          letterSpacing: 0,
+                          color: const Color(0xFF595959),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                Spacer(),
+                Text(
+                  "\$214.06",
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16,
+                    height: 22 / 16,
+                    letterSpacing: 0,
+                    color: CustomColors.primary,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
