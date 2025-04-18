@@ -5,10 +5,14 @@ import 'package:tripping_pro/screens/bottom_nav_bar/bottom_nav_bar.dart';
 import 'package:tripping_pro/screens/chat_screen/chat_screen.dart';
 import 'package:tripping_pro/screens/explore_screen/explore_screen.dart';
 import 'package:tripping_pro/screens/get_started_screen/get_started_screen.dart';
+import 'package:tripping_pro/screens/guide_screen/guide_screen.dart';
 import 'package:tripping_pro/screens/home/home_screen.dart';
 import 'package:tripping_pro/screens/my_booking_screen/my_booking_screen.dart';
 import 'package:tripping_pro/screens/notification_screen.dart/notification_screen.dart';
 import 'package:tripping_pro/screens/profile_screen/profile_screen.dart';
+import 'package:tripping_pro/screens/search_flight_screen/book_flight_screen.dart';
+import 'package:tripping_pro/screens/search_flight_screen/detail_flight_screen.dart';
+import 'package:tripping_pro/screens/search_flight_screen/search_flight_screen.dart';
 import 'package:tripping_pro/screens/splash/splash_screen.dart';
 
 class RouteNames {
@@ -23,6 +27,10 @@ class RouteNames {
   static const String profileScreen = 'profile_screen';
   static const String exploreScreen = 'explore_screen';
   static const String myBookingScreen = 'my_booking_screen';
+  static const String guideScreen = 'guide_screen';
+  static const String searchFlightScreen = 'search_flight_screen';
+  static const String detailFlightScreen = 'detail_flight_screen';
+  static const String bookingFlightScreen = 'booking_flight_screen';
 }
 
 class Routes {
@@ -81,6 +89,27 @@ class Routes {
       case RouteNames.myBookingScreen:
         return MaterialPageRoute(
           builder: (BuildContext context) => const MyBookingScreen(),
+        );
+
+      case RouteNames.guideScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const GuideScreen(),
+        );
+
+      case RouteNames.searchFlightScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const SearchFlightScreen(),
+        );
+
+      case RouteNames.detailFlightScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const DetailFlightScreen(),
+        );
+
+        
+      case RouteNames.bookingFlightScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const BookingFlightScreen(),
         );
 
       default:

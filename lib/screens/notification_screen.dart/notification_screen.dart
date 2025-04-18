@@ -39,7 +39,7 @@ class NotificationScreen extends StatelessWidget {
                 child: NotificationTile(
                   notificationTitle: "New message from John Doe",
                   notificationSubtitle: "Hey! How are you?",
-                  notificationImage: "https://picsum.photos/200",
+                  notificationImage: "assets/images/flight.jpg",
                   isNewNotification:
                       (index == 2 || index == 4 || index == 6) ? true : false,
                 ),
@@ -83,7 +83,7 @@ class NotificationTile extends StatelessWidget {
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(10),
-          child: Image.network(
+          child: Image.asset(
             notificationImage,
             height: 40.rh(context),
             width: 40.rw(context),

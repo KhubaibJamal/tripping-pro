@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:tripping_pro/res/theme/theme.dart';
 import 'package:tripping_pro/utils/responsiveSize.dart';
 
-
 class RecentItinerariesCard extends StatelessWidget {
   final String imageUrl;
   final String title;
@@ -58,10 +57,10 @@ class AvatarRow extends StatelessWidget {
   Widget build(BuildContext context) {
     // List of avatar image URLs (replace with your own assets if needed)
     final List<String> avatarUrls = [
-      'https://picsum.photos/200',
-      'https://picsum.photos/300',
-      'https://picsum.photos/400',
-      'https://picsum.photos/500',
+      'assets/images/home_bg.png',
+      'assets/images/new_year.png',
+      'assets/images/valleys.png',
+      'assets/images/home_bg.png',
     ];
 
     return SizedBox(
@@ -83,7 +82,7 @@ class AvatarRow extends StatelessWidget {
                       shape: BoxShape.circle,
                       border: Border.all(color: Colors.white, width: 2),
                       image: DecorationImage(
-                        image: NetworkImage(avatarUrls[index]),
+                        image: AssetImage(avatarUrls[index]),
                         fit: BoxFit.cover,
                       ),
                     ),

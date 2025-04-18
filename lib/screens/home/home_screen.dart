@@ -106,8 +106,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 image: DecorationImage(
-                                  image: NetworkImage(
-                                    'https://s3-alpha-sig.figma.com/img/06ff/e8b0/23a2a110911bed68e65378ee240f900c?Expires=1745193600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tkZqIjYeoqlGFodc5OgMIFtKjeGMfP8WoPrph~BfcdVuSyBmBJ2wb0HjMTv-L4axbCGeFIu9yMHVoxtGeoszmnrxMGM7CevMi-Zxh2-2vvnv9wFGwAlLBLBISHW1BGGb68~zqShQ4VvRfF27Df0To4PihhCfH~kkk5w9JpRxW-wGS7IBlsi~8D-c7-bAOJftVml6SlbQc~dQfs5PWnk~Nyu9~Tptan7smKOKomLGuDkHffksRpKEwuIi08qj3tEwMJLcBJVLaLt5HVW1MZvvEJeLTP8pFtmkN0pmiC-TqCLOKZE4az3KGlI7v2Umud9ONGYcNm9-Y~mg7wJAeKB3fw__',
+                                  image: AssetImage(
+                                    'assets/images/profile.png',
                                   ),
                                 ),
                               ),
@@ -173,6 +173,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           isBottomBorder: true,
                           textController: searchController,
                           hintText: "Ask Anything",
+                          onTap: () {
+                            Navigator.pushNamed(context, RouteNames.chatScreen);
+                          },
                         ),
                       ),
                     ],
@@ -199,12 +202,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: RecentItinerariesCard(
                             imageUrl: itineraries[index]['imageUrl'],
                             title: itineraries[index]['title'],
-                            onTap: () {
-                              Navigator.pushNamed(
-                                context,
-                                RouteNames.chatScreen,
-                              );
-                            },
+                            onTap: () {},
                           ),
                         );
                       },

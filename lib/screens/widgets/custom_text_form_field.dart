@@ -88,6 +88,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      
       autofillHints: widget.autofillHints,
       maxLength: widget.maxLength,
       textAlign: widget.textAlign ?? TextAlign.start,
@@ -114,7 +115,11 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       keyboardType: widget.keyboard,
       decoration: InputDecoration(
         contentPadding: widget.contentPadding,
-        prefix: widget.prefix,
+
+        prefix: Padding(
+          padding: EdgeInsets.only(right: 14),
+          child: widget.prefix,
+        ),
         prefixIcon:
             widget.prefixIcon != null
                 ? Padding(

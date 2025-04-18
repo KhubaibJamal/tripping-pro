@@ -370,4 +370,5 @@ class CustomColors {
   static Color checkBoxGreen = const Color(0xff07a27a);
   static Color cardColor = const Color(0xffF7F8F9);
   static const Color dividerColor = Color(0xFFD8D8D8);
+  static const Color reviewColor = Color(0xFFFF7F23);
 }

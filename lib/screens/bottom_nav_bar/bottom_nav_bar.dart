@@ -9,7 +9,8 @@ import 'package:tripping_pro/screens/profile_screen/profile_screen.dart';
 import 'package:tripping_pro/screens/widgets/custom_safearea.dart';
 
 class BottomNavBar extends StatefulWidget {
-  const BottomNavBar({super.key});
+  final int? index;
+  const BottomNavBar({super.key, this.index});
 
   @override
   State<BottomNavBar> createState() => _BottomNavBarState();
@@ -21,7 +22,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   @override
   void initState() {
-    _pageController = PageController(initialPage: 0);
+    _pageController = PageController(initialPage: widget.index ?? 0);
+    _selectedIndex = widget.index ?? 0;
     super.initState();
   }
 
